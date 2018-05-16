@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Survey</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+          
+      
+      <% if user_signed_in? %>  
+       
+      <div style='text-align: right'>
+        <br>Hi, <strong><%= current_user.email %></strong>   
+      </div>
+      <div style='text-align: right'>
+        <%= link_to "Active Admin", admin_root_path    %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete,data: { confirm: 'Are you sure?' }   %>
+      </div>
+      
+            <div>
+             <nav id="primary_nav_wrap">
+               <ul class="current-menu-item">
+                   <li><ul><%= link_to "Submit Query",question_create_path() %></ul></li>
+               
+                   <li><ul><%= link_to "Query List",question_retrive_path() %></ul></li>
+               </ul>
+             </nav>
+            </div>
+              
+
+      <% end %>
+    <%= yield %>
+  </body>
+</html>
+
+

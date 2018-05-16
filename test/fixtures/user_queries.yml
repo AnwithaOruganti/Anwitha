@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  query: MyString
+  answered_by: MyString
+  query_id: 1
+  contact: 1
+  today_question_count: 1
+  total_no_of_questions: 1
+  answered_questions: 1
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  query: MyString
+  answered_by: MyString
+  query_id: 1
+  contact: 1
+  today_question_count: 1
+  total_no_of_questions: 1
+  answered_questions: 1

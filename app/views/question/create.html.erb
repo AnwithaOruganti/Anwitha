@@ -1,0 +1,39 @@
+ <%= form_tag(controller: "question", action: 'store', method: "post" ) do %>
+    <div class="container" id= "crete_query">
+              <div class="panel-group">
+                <div class="panel panel-info">
+                  <div class="panel-heading"><b>Query Information</b></div>
+                  <div class="panel-body">  
+                      <table style="width: 60%">
+                          <%= hidden_field_tag 'query_uniq_id', Devise.friendly_token %>
+                          
+                          <tr>
+                                <td style="width: 50%"><%=  label_tag 'first_name',"First Name"%></td>
+                                <td style="width: 50%"><%= text_field_tag :first_name, nil,:required => true  %></td>                                          
+                          </tr>
+                          <tr>
+                                <td style="width: 50%"><%= label_tag 'last_name',"Last Name"%></td>
+                                <td style="width: 50%"><%= text_field_tag :last_name, nil,:required => true %></td>                                          
+                          </tr>
+                          
+                          <tr>
+                                <td style="width: 50%"><%= label_tag 'contact',"Contact Number"%></td>
+                                <td style="width: 50%"><%= text_field_tag :contact, nil,:required => true %></td>                                          
+                          </tr>
+                          <tr>
+                                <td style="width: 50%"><%= label_tag 'query',"Enter Query"%></td>
+                                <td style="width: 50%"><%= text_area_tag :query, nil,:required => true %></td>                                          
+                          </tr>
+
+                      </table>  
+                  </div>
+                </div>
+              </div>
+                <table>
+                    <tr>
+                      <td width="20%"> <%= submit_tag("Submit Query") %></td>
+
+                    </tr>
+              </table> 
+            </div>
+<% end %>

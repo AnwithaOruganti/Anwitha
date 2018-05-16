@@ -1,0 +1,38 @@
+<% if @answer != []  %>
+    <div class="container" id= "crete_query">
+                  <div class="panel-group">
+                    <div class="panel panel-info">
+                      <div class="panel-heading"><b>Solution Information</b></div>
+                      <div class="panel-body">
+                         <% @answer.each do |ans| %>
+                        <table style='width: 60%'>
+                          <tr>
+                              <td style="width: 50%">Query Mantched by your Pharse is? </td>
+                              <td style="width: 50%"><%=  ans.query %></td>
+                          </tr>
+                          <tr>
+                              <td style="width: 50%">Answer </td>
+                              <td style="width: 50%"><%=  ans.answer %></td>
+                          </tr>
+                          <tr>
+                              <td style="width: 50%">Solution Provider </td>
+                              <td style="width: 50%"><%=  ans.answered_by %></td>
+                          </tr>
+                          <tr>
+                              <td style="width: 50%">Unique ID </td>
+                              <td style="width: 50%"><%=  ans.query_id %></td>
+                          </tr>
+                          <tr>
+                              <td style="width: 50%">Solution Provided at </td>
+                              <td style="width: 50%"><%=  DateTime.now %></td>
+                          </tr>
+                       </table>
+                          <% end %>
+                      </div>
+                    </div>
+                  </div>
+    </div>
+<% else %>
+<h2><b>We didn't found your Query.Please fetch with some other relevant phrases</b></h2>
+<% end %>
+<b><%= link_to "Back to Submit Query>>", request.env['HTTP_REFERER'] %></b>

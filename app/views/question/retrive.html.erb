@@ -1,0 +1,28 @@
+<% if @prev_data != nil  %>
+<div class="container" id= "retrive_query">
+              <div class="panel-group">
+                <div class="panel panel-info">
+                  <div class="panel-heading"><b>Previous Queries Information</b></div>
+                  <div class="panel-body">  
+                      <table style="width: 60%">
+                            <% @prev_data.each do |prev| %>
+                             <tr>
+                                <td>                                    
+                                   <%=  prev.query %>
+                                </td>
+                             </tr>
+                             <% end %>
+                       </table>
+                  </div>
+                </div>
+              </div>
+</div>
+<% else %>
+<h2><b>No Queries yet by you!</b></h2>
+<% end %>
+
+<script>
+  $(".btn-link").click(function () {
+     var id  = this.id;
+     alert(id)
+</script>
